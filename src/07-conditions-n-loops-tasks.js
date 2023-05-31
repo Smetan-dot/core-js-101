@@ -492,8 +492,33 @@ function getMatrixProduct(m1, m2) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  throw new Error('Not implemented');
+function evaluateTicTacToePosition(position) {
+  const arr = [];
+  for (let i = 0; i < 3; i += 1) {
+    for (let j = 0; j < 3; j += 1) {
+      arr.push(position[i][j]);
+    }
+  }
+
+  if ((arr[0] === 'X' && arr[1] === 'X' && arr[2] === 'X')
+  || (arr[3] === 'X' && arr[4] === 'X' && arr[5] === 'X')
+  || (arr[6] === 'X' && arr[7] === 'X' && arr[8] === 'X')
+  || (arr[0] === 'X' && arr[4] === 'X' && arr[8] === 'X')
+  || (arr[2] === 'X' && arr[4] === 'X' && arr[6] === 'X')
+  || (arr[0] === 'X' && arr[3] === 'X' && arr[6] === 'X')
+  || (arr[2] === 'X' && arr[5] === 'X' && arr[8] === 'X')
+  || (arr[1] === 'X' && arr[4] === 'X' && arr[7] === 'X')) return 'X';
+
+  if ((arr[0] === '0' && arr[1] === '0' && arr[2] === '0')
+  || (arr[3] === '0' && arr[4] === '0' && arr[5] === '0')
+  || (arr[6] === '0' && arr[7] === '0' && arr[8] === '0')
+  || (arr[0] === '0' && arr[4] === '0' && arr[8] === '0')
+  || (arr[2] === '0' && arr[4] === '0' && arr[6] === '0')
+  || (arr[0] === '0' && arr[3] === '0' && arr[6] === '0')
+  || (arr[2] === '0' && arr[5] === '0' && arr[8] === '0')
+  || (arr[1] === '0' && arr[4] === '0' && arr[7] === '0')) return '0';
+
+  return undefined;
 }
 
 
